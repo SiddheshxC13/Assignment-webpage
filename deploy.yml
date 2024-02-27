@@ -1,0 +1,16 @@
+- name: Deploy Dockerized Server
+  hosts: servers
+  become: true
+  tasks:
+    - name: Clone repository
+      git:
+        repo: https://github.com/SiddheshxC13/Assignment-webpage.git
+        dest: /home/ubuntu/yourrepository
+        force: yes
+
+    - name: Build Docker image
+      shell: docker compose up -d
+      args:
+        chdir: /home/ubuntu/yourrepository
+
+
