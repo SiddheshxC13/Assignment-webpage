@@ -25,4 +25,4 @@ jobs:
             run: docker tag ${{ secrets.DOCKER_USERNAME }}/simple-webpage:latest ${{ secrets.DOCKER_USERNAME }}/simple-webpage:$(date +'%Y%m%d%H%M%S')
           
           - name: Push Docker image
-            run: docker push ${{ secrets.DOCKER_USERNAME }}/simple-webpage:$(date +'%Y/%m/%d:%H%M%S')
+            run:  docker push ${{ secrets.DOCKER_USERNAME }}/simple-webpage:$(date +'%Y%m%d%H%M%S')
